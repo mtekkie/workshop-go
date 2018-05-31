@@ -5,6 +5,7 @@ import (
 	"log"
 	"github.com/mtekkie/workshop-go/pkg/routing"
 	"os"
+	"github.com/mtekkie/workshop-go/pkg/webserver"
 )
 
 // go run ./cmd/gophercon/gophercon.go
@@ -19,7 +20,10 @@ func main() {
 
 	r := routing.BaseRouter()
 
-	http.ListenAndServe(":"+port, r)
-}
+	ws := webserver.New("", port, r)
+
+	ws.Start()
+
+	}
 
 

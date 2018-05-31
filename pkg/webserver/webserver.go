@@ -11,7 +11,7 @@ type WebServer struct {
 	address string
 }
 
-func New (host, port string ) *WebServer {
+func New (host, port string,  h http.Handler ) *WebServer {
 
 		var ws WebServer
 
